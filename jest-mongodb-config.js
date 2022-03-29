@@ -8,6 +8,7 @@ module.exports = {
       dbName: 'jest'
     },
     autoStart: false
-  }
-  // useSharedDBForAllJestWorkers: false
+  },
+
+  useSharedDBForAllJestWorkers: false
 }
