@@ -8,11 +8,14 @@ module.exports = {
     '!**/protocols/**'
   ],
   coverageDirectory: 'coverage',
-  coverageProvider: 'v8',
+  coverageProvider: 'babel',
   testEnvironment: 'node',
   preset: '@shelf/jest-mongodb',
   transform: {
     '.+\\.ts$': 'ts-jest'
   },
-  watchPathIgnorePatterns: ['globalConfig']
+  moduleNameMapper: {
+    '@/tests/(.*)': '<rootDir>/tests/$1',
+    '@/(.*)': '<rootDir>/src/$1'
+  }
 }
