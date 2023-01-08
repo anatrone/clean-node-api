@@ -2,8 +2,8 @@ import { AccountModel, AddAccountModel, Encrypter, AddAccountRepository } from '
 import { DbAddAccount } from './db-add-account'
 
 interface SutTypes {
-  sut: DbAddAccount,
-  encrypterSub: Encrypter,
+  sut: DbAddAccount
+  encrypterSub: Encrypter
   addAccountRepositoryStub: AddAccountRepository
 }
 
