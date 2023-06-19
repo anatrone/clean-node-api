@@ -13,7 +13,7 @@ services:
     image: node:12
     working_dir: /usr/src/clean-node-api
     restart: always
-    command: bash -c "yarn --only=prod && npm run debug"
+    command: bash -c "npm install --only=prod && npm run debug"
     environment:
       - MONGO_URL=mongodb://mongo:27017/clean-node-api
     volumes:
