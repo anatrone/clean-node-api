@@ -40,6 +40,7 @@ const makeFakeRequest = (): HttpRequest => ({
   body: {
     name: 'any_name',
     password: 'any_password',
+    email: 'any_email@mail.com',
     passwordConfirmation: 'any_password'
   }
 })
@@ -160,8 +161,7 @@ describe('SignUp Controller', () => {
     })
 
     const httpResponse = await sut.handle(makeFakeRequest())
-
-    expect(httpResponse.body).toEqual(serverError(new ServerError(null)))
+    expect(httpResponse).toEqual(serverError(new Error()))
   })
 
   test('should call AddAccount with correct values', async () => {
@@ -194,6 +194,6 @@ describe('SignUp Controller', () => {
 
     const httpResponse = await sut.handle(makeFakeRequest())
 
-    expect(httpResponse).toEqual(successRequest(makeFakeAccount))
+    expect(httpResponse).toEqual(successRequest(makeFakeAccount()))
   })
 })
